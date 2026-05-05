@@ -92,15 +92,17 @@
 
 <body>
 
+<h1 style="color:red;">TEST VERSION</h1>
+
 <div class="app">
 
   <!-- Sidebar Tabs -->
     <div class="sidebar">
       <h2>Job Tracker</h2>
 
-      <button onclick="showTab('tracker')">Tracker</button>
-      <button onclick="showTab('dashboard')">Dashboard</button>
-      <button onclick="showTab('analyzer')">Analyzer</button>
+      <button id="trackerBtn">Tracker</button>
+      <button id="dashboardBtn">Dashboard</button>
+      <button id="analyzerBtn">Analyzer</button>   
     </div>
 
     <!-- Main Content -->
@@ -108,24 +110,23 @@
 
       <!-- TRACKER -->
       <div id="tracker" class="card">
-        <h2>Add Job</h2>
-      </div>
-    <form id="jobform">
-        <input id="company" placeholder="Company" required>
-        <input id="role" placeholder="Role" required>
+  <h2>Add Job</h2>
 
-        <select id="status">
-          <option>Applied</option>
-          <option>Interview</option>
-          <option>Rejected</option>
-        </select>
+  <form id="jobForm">
+    <input id="company" placeholder="Company" required>
+    <input id="role" placeholder="Role" required>
 
-        <button type="submit">Add Job</button>
-        </form>
+    <select id="status">
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Rejected</option>
+    </select>
 
-        <ul id="jobList"></ul>
-      </div>
-        
+    <button type="submit">Add Job</button>
+  </form>
+
+  <ul id="jobList"></ul>
+</div>        
   
 
 <!-- DASHBOARD -->
@@ -144,7 +145,7 @@
 <textarea id="resume" placeholder="Paste your resume"></textarea>
 <textarea id="jobDesc" placeholder="Paste job description"></textarea>
 
-<button oncllick="analyze()">Analyze</button>
+<button onclick="analyze()">Analyze</button>
 
 <ul id="results"></ul>
 </div>
@@ -152,7 +153,7 @@
 </div>
 
 <!-- Connect JS -->
-<stript src="script.js"></stript>
+<script src="./script.js"></script>
 
 </body>
 </html>
