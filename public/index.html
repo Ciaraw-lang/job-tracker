@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>Job Tracker</title>
+  
+  <style>
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+          background: #f4f6f9;
+      }
+
+      .app {
+        display: flex;
+        height: 100vh;
+      }
+
+
+      /* Sidebar */
+      .sidebar {
+        width: 220px;
+        background: #1e293b;
+        color: white;
+        padding: 20px;
+      }
+
+      .sidebar h2 {
+        margin-bottom: 20px;
+      }
+
+      .sidebar button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        background: none;
+        border: none;
+        color: white;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .sidebar button:hover {
+        background: #334155;
+      }
+
+      /* Main content */
+      .main {
+        flex: 1;
+        padding: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 20px 6px rgba(0,0,0,0.1);
+      }
+    
+      input, select, textarea {
+          width: 100%;
+          padding: 10px;
+          margin: 10px 0;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+      }
+
+      button.action {
+        background: #2563eb;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
+      button:hover {
+          background: #1d4ed8;
+      }
+
+      .status {
+        font-weight: bold;
+        margin-left: 5px;
+      }
+
+      .applied { color: gray; }
+      .interview { color: orange; }
+      .rejected { color: red; }
+    </style>
+</head> 
+
+<body>
+
+<div class="app">
+
+  <!-- Sidebar Tabs -->
+    <div class="sidebar">
+      <h2>Job Tracker</h2>
+
+      <button onclick="showTab('tracker')">Tracker</button>
+      <button onclick="showTab('dashboard')">Dashboard</button>
+      <button onclick="showTab('analyzer')">Analyzer</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+      <!-- TRACKER -->
+      <div id="tracker" class="card">
+        <h2>Add Job</h2>
+      </div>
+    <form id="jobform">
+        <input id="company" placeholder="Company" required>
+        <input id="role" placeholder="Role" required>
+
+        <select id="status">
+          <option>Applied</option>
+          <option>Interview</option>
+          <option>Rejected</option>
+        </select>
+
+        <button type="submit">Add Job</button>
+        </form>
+
+        <ul id="jobList"></ul>
+      </div>
+        
+  
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="card" style="display:none;">
+  <h2>Dashboard</h2>
+    
+  <p id="totalJobs"></p>
+  <p id="interviews"></p>
+  <p id="rejected"></p> 
+</div>
+
+<!-- ANALYZER --> 
+<div id="analyzer" class="card" style="display:none;">
+<h2>Resume Analyzer</h2>
+
+<textarea id="resume" placeholder="Paste your resume"></textarea>
+<textarea id="jobDesc" placeholder="Paste job description"></textarea>
+
+<button oncllick="analyze()">Analyze</button>
+
+<ul id="results"></ul>
+</div>
+
+</div>
+
+<!-- Connect JS -->
+<stript src="script.js"></stript>
+
+</body>
+</html>
